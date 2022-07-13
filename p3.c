@@ -4,6 +4,13 @@
 #include <time.h>
 #include <stdlib.h>
 
+/*   =====       STRUCT        =====     */
+
+struct Pirata
+{
+  char nome[20];
+  int atributos;
+};
 
 /*   =====       DESCRIÇÃO DAS FUNÇÕES        =====     */
 
@@ -15,13 +22,6 @@ void imprimirRegistros(struct Pirata pirata1, struct Pirata pirata2);
 
 
 /*   =====       MAIN       =====     */
-
-struct Pirata
-{
-  char nome[20];
-  int atributos;
-};
-
 int main () {
   srand(time(NULL));
 
@@ -45,6 +45,8 @@ int main () {
   pirata1.atributos = valorAtributo(n1);
   pirata2.atributos = valorAtributo(n2);
 
+  imprimirRegistros(pirata1, pirata2);
+
   if (pirata1.atributos > pirata2.atributos)
   {
     printf("\nO(A) pirata %s foi o(a) vencedor(a)! Ele(a) possui um poder de %d! Que incrivel!",pirata1.nome,pirata1.atributos);
@@ -54,8 +56,7 @@ int main () {
   } else {
     printf("\nOs dois piratas: %s e %s sao incrivelmente fortes! A luta deu empate! Ambos tem poder %d!",pirata1.nome,pirata2.nome,pirata1.atributos);
   }
-   
- // imprimirRegistros(pirata1,pirata2);
+
   return 0;
 }
 
@@ -84,11 +85,11 @@ void sobrePiratas(void) {
   printf("(5) Nami:\n\tA gatuna se destaca por sua habilidade de navegacao e persuasao!\n\n");
   printf("(6) Robin:\n\tA filha de Ohara e a unica capaz de ler os Poneglyphs que levam ate o maior tesouro do mundo!\n\n");
   printf("(7) Franky:\n\tO ciborgue e o maior construtor naval do mundo, alem de possuir uma armadura incrivel!\n\n");
-  printf("(8) Chopper:\n\tUma rena falante que parece um guaxinim, muito FOFO e o melhor medico do mundo\n\n");
+  printf("(8) Chopper:\n\tUma rena falante que parece um guaxinim, muito FOFO e o melhor medico do mundo!\n\n");
   printf("(9) Brook:\n\tApesar de ser 'puro osso', Brook nao hesita ao enfrentar novos oponentes e da o seu maximo com o poder da musica YOHOHO!\n\n");
   printf("(10) Jinbe:\n\tO cavaleiro dos mares e um homem-peixe e ja foi um dos piratas mais renomados do mundo, se destaca por sua resistencia dentro e fora d'agua!\n\n");
   printf("(11) Yamato:\n\tFilha da criatura mais forte do universo, o imperador Kaido!\n\n");
-  printf("(12) Vivi e Carue:\n\tEssa dupla de princesa e e Pato corredor desbravam os desertos de Alabasta na velocidade da luz!\n\n");
+  printf("(12) Vivi e Carue:\n\tEssa dupla de princesa e Pato corredor desbravam os desertos de Alabasta na velocidade da luz!\n\n");
 
 }
 
@@ -149,7 +150,7 @@ int valorAtributo (int n1) {
     coragem += 3;
     break;
   case 9:
-    coragem *= 3;
+    coragem *= 4;
     break;
   case 10:
     vida *= 4;
