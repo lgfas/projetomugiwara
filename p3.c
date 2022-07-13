@@ -1,9 +1,3 @@
-/* 
-PROVA 3
-ALUNO: LUÍS GUILHERME FREITAS DE ALMEIDA SILVA
-MATRÍCULA: 2020002820  
-*/
-
 /*   =====       BIBLIOTECAS        =====     */
 
 #include <stdio.h>
@@ -17,7 +11,7 @@ void lobby(void);
 void sobrePiratas(void);
 void escolherPirata(int *pont1, int *pont2);
 int valorAtributo (int n1);
-//void imprimirRegistros(struct Pirata pirata1, struct Pirata pirata2);
+void imprimirRegistros(struct Pirata pirata1, struct Pirata pirata2);
 
 
 /*   =====       MAIN       =====     */
@@ -173,10 +167,9 @@ int valorAtributo (int n1) {
   return vida + inteligencia + forca + agilidade + coragem;
 }
 
-/*
+
 // Função para imprimir registros.
 void imprimirRegistros(struct Pirata pirata1, struct Pirata pirata2) {
   printf("\n%s , poder: %d",pirata1.nome,pirata1.atributos);
   printf("\n%s , poder: %d",pirata2.nome,pirata2.atributos);
 }
-*/
